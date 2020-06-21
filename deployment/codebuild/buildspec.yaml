@@ -32,4 +32,4 @@ phases:
       # - docker push $ECR_REPOSITORY_URI_DEFAULT:latest-dev
       # - echo "    pushing the image to ECR [done]"
 
-      - mysql -h simple-database.cluster-cuzlsorkzlvn.ap-south-1.rds.amazonaws.com -P 3306 -u admin -p'1114223aA3#' -e'quit'
+      - mysql -h simple-database.cluster-cuzlsorkzlvn.ap-south-1.rds.amazonaws.com -P 3306 -u admin -p'1114223aA3#'
