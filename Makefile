@@ -22,6 +22,7 @@ migrate:
 		-e "FLYWAY_PASSWORD=11142233" \
 		-e "FLYWAY_USER=admin" \
 		-e "FLYWAY_URL=jdbc:mysql://simple-database-1.cluster-cuzlsorkzlvn.ap-south-1.rds.amazonaws.com:3306/simpledatabase" \
+		-v ${PWD}/config/flyway/:/flyway/conf \
 		-v ${PWD}/deployment/migrations:/flyway/sql \
 		boxfuse/flyway:5.1.4 migrate
 
