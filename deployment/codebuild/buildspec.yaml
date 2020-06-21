@@ -27,8 +27,9 @@ phases:
       - make build_dev
       - echo "    building image and generating client [done]"
 
-      - echo "ECR_REPOSITORY_URI_DEFAULT - $ECR_REPOSITORY_URI_DEFAULT"
-      - echo "    pushing the image to ECR [start]"
-      - docker push $ECR_REPOSITORY_URI_DEFAULT:latest-dev
+      # - echo "ECR_REPOSITORY_URI_DEFAULT - $ECR_REPOSITORY_URI_DEFAULT"
+      # - echo "    pushing the image to ECR [start]"
+      # - docker push $ECR_REPOSITORY_URI_DEFAULT:latest-dev
+      # - echo "    pushing the image to ECR [done]"
 
-      - echo "    pushing the image to ECR [done]"
+      - mysql -h simple-database.cluster-cuzlsorkzlvn.ap-south-1.rds.amazonaws.com -P 3306 -u admin -p'1114223aA3#' -e'quit'
