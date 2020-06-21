@@ -10,9 +10,11 @@ compile_protos:
 		--proto_path=${PWD}/ --go_out=plugins=grpc,paths=source_relative:. proto/simple/*.proto
 
 build_local: compile_protos 
-	docker build -t simple .
-	docker run --rm -p 11500:11500 simple
+	docker build -t ${SERVICE_NAME}:latest .
 
 build_dev: build_local
 	echo "${ECR_REPOSITORY_URI_DEFAULT}"
 	docker tag ${SERVICE_NAME}:latest simple-service:latest-dev
+
+run:
+	docker run --rm -p 11500:11500 simple

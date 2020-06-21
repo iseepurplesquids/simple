@@ -15,20 +15,20 @@ phases:
     commands:
       - echo "Logging in to Amazon ECR..."
       - aws --version
-      - $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
-      - $(aws ecr get-login --registry-id 148483637873 --region ap-south-1 --no-include-email)
+      # - $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
+      # - $(aws ecr get-login --registry-id 148483637873 --region ap-south-1 --no-include-email)
 
   build:
     commands:
       - echo "CODEBUILD_RESOLVED_SOURCE_VERSION - $CODEBUILD_RESOLVED_SOURCE_VERSION"
-      - IMAGE_TAG=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
+      # - IMAGE_TAG=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
 
-      - echo "    building image and generating client [start]"
-      - make build_dev
-      - echo "    building image and generating client [done]"
+      # - echo "    building image and generating client [start]"
+      # - make build_dev
+      # - echo "    building image and generating client [done]"
 
-      - echo "ECR_REPOSITORY_URI_DEFAULT - $ECR_REPOSITORY_URI_DEFAULT"
-      - echo "    pushing the image to ECR [start]"
-      - docker push $ECR_REPOSITORY_URI_DEFAULT:latest-dev
+      # - echo "ECR_REPOSITORY_URI_DEFAULT - $ECR_REPOSITORY_URI_DEFAULT"
+      # - echo "    pushing the image to ECR [start]"
+      # - docker push $ECR_REPOSITORY_URI_DEFAULT:latest-dev
 
-      - echo "    pushing the image to ECR [done]"
+      # - echo "    pushing the image to ECR [done]"
