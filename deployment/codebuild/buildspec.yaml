@@ -26,7 +26,8 @@ phases:
       - echo "    building image and generating client [start]"
       # - make build_dev
       - echo "    building image and generating client [done]"
-
+      - echo "$(pwd)"
+      - echo "$CODEBUILD_SRC_DIR"
       # - echo "ECR_REPOSITORY_URI_DEFAULT - $ECR_REPOSITORY_URI_DEFAULT"
       # - echo "    pushing the image to ECR [start]"
       # - docker push $ECR_REPOSITORY_URI_DEFAULT:latest-dev
