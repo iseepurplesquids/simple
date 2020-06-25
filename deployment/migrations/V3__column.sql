@@ -1,0 +1,1 @@
+ALTER TABLE simplenumbers ADD simplenumber2 INTEGER;

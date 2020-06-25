@@ -23,15 +23,14 @@ phases:
       - echo "CODEBUILD_RESOLVED_SOURCE_VERSION - $CODEBUILD_RESOLVED_SOURCE_VERSION"
       - IMAGE_TAG=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
 
-      - echo "    building image and generating client [start]"
+      # - echo "    building image and generating client [start]"
       # - make build_dev
-      - echo "    building image and generating client [done]"
-      - echo "$(pwd)"
-      - echo "$CODEBUILD_SRC_DIR"
+      # - echo "    building image and generating client [done]"
       # - echo "ECR_REPOSITORY_URI_DEFAULT - $ECR_REPOSITORY_URI_DEFAULT"
       # - echo "    pushing the image to ECR [start]"
       # - docker push $ECR_REPOSITORY_URI_DEFAULT:latest-dev
       # - echo "    pushing the image to ECR [done]"
 
+      - echo "PWD - $(pwd)  CODEBUILD_SRC_DIR - "$CODEBUILD_SRC_DIR""
       - echo "Running Migration"
-      - cd $CODEBUILD_SRC_DIR && make migrate
+      - make migrate

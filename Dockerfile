@@ -6,4 +6,4 @@ COPY . .
 
 EXPOSE 11500
 
-ENTRYPOINT ["go", "run", "main.go"]
+ENTRYPOINT ["go", "build"]
