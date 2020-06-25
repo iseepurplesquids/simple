@@ -23,6 +23,9 @@ phases:
       - echo "CODEBUILD_RESOLVED_SOURCE_VERSION - $CODEBUILD_RESOLVED_SOURCE_VERSION"
       - IMAGE_TAG=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
 
+  post_build:
+    commands:
+
       # - echo "    building image and generating client [start]"
       # - make build_dev
       # - echo "    building image and generating client [done]"
