@@ -24,7 +24,7 @@ migrate:
 		-e "FLYWAY_URL=jdbc:mysql://${DB_HOST}:3306/simpledatabase" \
 		-v ${PWD}/config/flyway/:/flyway/conf \
 		-v ${PWD}/deployment/migrations:/flyway/sql \
-		boxfuse/flyway:5.1.4 migrate
+		boxfuse/flyway:5.1.4 clean
 
 run:
 	docker run --rm -p 11500:11500 simple
