@@ -17,7 +17,7 @@ build_dev: build_local
 	docker tag ${SERVICE_NAME}:latest simple-service:latest-dev
 
 migrate:
-	docker run --rm \
+	@docker run --rm \
 		-e "FLYWAY_SCHEMAS=simpledatabase" \
 		-e "FLYWAY_PASSWORD=${DB_PASSWORD}" \
 		-e "FLYWAY_USER=${DB_USERNAME}" \
