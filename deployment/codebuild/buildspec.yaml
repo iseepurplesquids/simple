@@ -36,4 +36,4 @@ phases:
 
       - echo "PWD - $(pwd)  CODEBUILD_SRC_DIR - "$CODEBUILD_SRC_DIR""
       - echo "Running Migration"
-      - make migrate
+      - cd $CODEBUILD_SRC_DIR && make migrate
